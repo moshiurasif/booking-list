@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font-awesome -->
+    <link href="font-awesome/css/all.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .header {
+            margin: 50px 0;
+        }
+
+        .header h2 {
+            margin-bottom: 20px;
+        }
+
+        .cart {
+
+            padding: 40px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            position: relative;
+            transition: 0.6s ease-in-out;
+        }
+
+        .cart::after {
+            content: "";
+            width: 80%;
+            height: 3px;
+            background-color: red;
+            position: absolute;
+            bottom: -5px;
+            left: 25px;
+            transform: scale(0, 1);
+            transition: transform 0.3s ease;
+
+        }
+
+        .cart:hover::after {
+            transform: scale(1, 1);
+        }
+
+        /* .cart:hover {
+            width: 80%;
+            height: 3px;
+            background-color: red;
+        } */
+
+        .cart-bg1 {
+            background-color: #FFD4B7;
+        }
+
+        .cart-bg2 {
+            background-color: #BEDADF;
+        }
+
+        .cart-bg3 {
+            background-color: #F6F3FF;
+        }
+
+        .cart-bg4 {
+            background-color: #FFE8E8;
+        }
+
+        .cart-bg5 {
+            background-color: #F2FFDB;
+        }
+
+        .cart-bg6 {
+            background-color: #FFF2EF;
+        }
+
+        .cart-bg7 {
+            background-color: #FBFBFB;
+        }
+
+        .cart-bg8 {
+            background-color: #FFF4EB;
+        }
+
+        .icon {
+            color: rgb(236, 81, 81);
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .body-section {
+            margin: 50px 0;
+            padding: 50px 0;
+            position: relative;
+        }
+
+        table {
+            background-color: #E22424;
+            border-radius: 5px;
+            color: white;
+
+        }
+
+        table>thead>tr>th {
+            width: 300px;
+            color: white;
+            position: relative;
+        }
+
+        table>thead>tr>th::after {
+            content: "";
+            width: 1px;
+            height: 40px;
+            background-color: #CBAAAA;
+            position: absolute;
+            right: 0;
+            top: 20px;
+
+        }
+
+        table>thead>tr>th:last-child::after {
+            width: 0;
+            height: 0;
+        }
+
+        table>tbody>tr>td:last-child::after {
+            width: 300px;
+        }
+
+        .input-table {
+            background-color: transparent;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .input-table input {
+            border: 0;
+        }
+
+        .input-table input:focus {
+            outline: 0;
+        }
+
+        .input-table>thead>tr>th {
+            width: 300px;
+
+            position: relative;
+        }
+
+        .input-table>thead>tr>th::after {
+            content: "";
+            width: 1px;
+            height: 40px;
+            background-color: #CECECE;
+            position: absolute;
+            right: 0;
+            top: 20px;
+
+        }
+
+        .add-more-btn {
+            border: 0;
+            background-color: transparent;
+        }
+
+        .add-btn,
+        .cancel-btn {
+            width: 110px;
+            background-color: #E22424;
+            font-size: 18px;
+            border: 1px solid red;
+            padding: 5px 20px;
+            border-radius: 5px;
+            color: #fff;
+            transition: 0.3s ease;
+        }
+
+        .cancel-btn {
+            background-color: transparent;
+            color: #E22424
+        }
+
+        .add-btn:hover {
+            background-color: transparent;
+            color: #E22424
+        }
+
+        .cancel-btn:hover {
+            background-color: #E22424;
+            color: #fff;
+        }
+
+        .more-btn {
+            position: absolute;
+            right: 55px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header text-center">
+        <h2>Rasel Academy</h2>
+
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="cart cart-bg1">
+                        <i class="fas fa-book icon"></i>
+                        <h4>Book List</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cart cart-bg2">
+                        <i class="fas fa-calendar-alt icon"></i>
+                        <h4>Routine</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cart cart-bg3">
+                        <i class="fas fa-user icon"></i>
+                        <h4>Member</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cart cart-bg4">
+                        <i class="fas fa-chalkboard-teacher icon"></i>
+                        <h4>Mentor</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cart cart-bg5">
+                        <i class="fas fa-handshake icon"></i>
+                        <h4>Meeting</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cart cart-bg6">
+                        <i class="fab fa-teamspeak icon"></i>
+                        <h4>Class Test</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cart cart-bg7">
+                        <i class="fas fa-sticky-note icon"></i>
+                        <h4>Attendence</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cart cart-bg8">
+                        <i class="fas fa-balance-scale icon"></i>
+                        <h4>Review</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-section">
+        <div class="container">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th style="padding: 30px" scope="col">Book Name</th>
+                        <th style="padding: 30px" scope="col">Code</th>
+                        <th style="padding: 30px" scope="col">Writer Name</th>
+                        <th style="padding: 30px" scope="col">Other</th>
+                    </tr>
+                </thead>
+
+            </table>
+
+            <div id="table-container">
+                <!-- <table class="table text-center input-table" id="table">
+                    <thead class="table text-center input-table">
+                        <tr>
+                            <th style="padding: 30px" scope="col"><input type="text"></th>
+                            <th style="padding: 30px" scope="col"><input type="text"></th>
+                            <th style="padding: 30px" scope="col"><input type="text"></th>
+                            <th style="padding: 30px" scope="col"><input type="text"></th>
+                        </tr>
+                    </thead>
+
+                </table> -->
+            </div>
+            <button onclick="addMore()" class="add-more-btn" id="add-more"><i class="fas fa-plus"></i> Add More</button>
+            <div class="more-btn">
+                <button class="add-btn">Add</button>
+                <button class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script defer src="font-awesome/js/all.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <script>
+        function addMore() {
+
+            const addMore = document.getElementById("add-more")
+            const tableContainer = document.getElementById("table-container");
+            const table = document.createElement("table");
+            table.classList = `table text-center input-table`;
+
+
+            table.innerHTML = `
+               <thead>
+                 <tr>
+                     <th style="padding: 30px" scope="col"><input type="text"></th>
+                     <th style="padding: 30px" scope="col"><input type="text"></th>
+                     <th style="padding: 30px" scope="col"><input type="text"></th>
+                     <th style="padding: 30px" scope="col"><input type="text"></th>
+                 </tr>
+                </thead>
+            `
+
+            tableContainer.appendChild(table);
+            addMore.add(table);
+
+        }
+    </script>
+</body>
+
+</html>
